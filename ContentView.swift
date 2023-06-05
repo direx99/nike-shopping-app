@@ -5,14 +5,49 @@
 //  Created by Dinith Hasaranga on 2023-06-05.
 //
 
+
+
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab = 1
+
     var body: some View {
-        VStack {
-           Home()
+        
+        TabView(selection: $selectedTab) {
+            Home()
+                .tabItem {
+                    Image("HomeIcon")
+                }
+                .tag(1)
+            Home()
+                .tabItem {
+                    Image( "SearchIcon")
+                        
+                }
+                .tag(2)
+            Home()
+                .tabItem {
+                    Image("HeartIcon")
+                        
+                   
+                }
+                .tag(3)
+            Home()
+                .tabItem {
+                    Image("UserIcon")
+                        
+                   
+                }
+                .tag(3)
+         
+           
         }
-        .padding()
+        .accentColor(.black)
+        
+        
+        
+        
     }
 }
 
