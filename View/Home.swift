@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
+        NavigationView {
+
         VStack{
             
             HStack{
@@ -65,9 +67,24 @@ struct Home: View {
             .padding(10)
             ScrollView(.horizontal,showsIndicators: false){
                 HStack(spacing: 15){
-                    SpecialDeal()
-                    SpecialDeal()
-                    SpecialDeal()
+                    
+                                    
+                                 
+                                
+                               
+                    NavigationLink(destination: Product()) {
+                        SpecialDeal()
+                    }
+                    NavigationLink(destination: Product()) {
+                        SpecialDeal()
+                    }
+                    NavigationLink(destination: Product()) {
+                        SpecialDeal()
+                    }
+                    NavigationLink(destination: Product()) {
+                        SpecialDeal()
+                    }
+
                 }
             }
            
@@ -79,6 +96,10 @@ struct Home: View {
         .background(Color("AppColor"))
 
     }
+        .navigationBarTitle("Main Page")
+
+    }
+    
 }
 
 struct TopCollection : View{
@@ -90,7 +111,7 @@ struct TopCollection : View{
                     .scaledToFit()
                     .padding(-40)
                     .padding(.top,-10 )
-                HStack{
+                HStack(alignment: .bottom){
                     VStack(alignment: .leading){
                         Text("Nike Air Max 90")
                             .padding(.top,-10 )
@@ -106,10 +127,10 @@ struct TopCollection : View{
                     VStack(alignment: .trailing){
                         Image(systemName: "heart")
                             .padding(.top,-10 )
-                            .font(.system(size: 20))
+                            .font(.system(size: 24))
                             .fontWeight(.medium)
                         Text("Free Shipping")
-                            .font(.system(size: 15))
+                            .font(.system(size: 12))
                             .foregroundColor(.gray)
                             
 

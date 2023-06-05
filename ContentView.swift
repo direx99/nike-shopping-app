@@ -44,7 +44,8 @@ struct ContentView: View {
            
         }
         .accentColor(.black)
-        
+        .background(Color("AppColor"))
+
         
         
         
