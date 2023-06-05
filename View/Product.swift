@@ -23,13 +23,22 @@ struct Product: View {
                     .padding(.top,-480)
                     .aspectRatio(contentMode: .fit)
                     .rotationEffect(rotationAngle)
+                    .rotationEffect(.degrees(0)) //
+                    
+
                     .animation(Animation.linear(duration: 0.5))
                             }
                             .onAppear {
                                 withAnimation {
                                     rotationAngle = .degrees(0)
+                                   
+
                                 }
+                                
                             }
+            
+            ProductImageBar()
+                .padding(.top,-250)
 
             ScrollView(showsIndicators: false){
                 VStack(spacing: 15){
@@ -130,11 +139,15 @@ struct Product: View {
                     }
                     VStack(alignment: .leading, spacing : 10){
                         Text("Description")
+                            .font(.system(size: 18))
+                            .fontWeight(.semibold)
                         Text("A springy ride for any run, the Peg's familiar, just-for-you feel returns to help you accomplish your goals. This version has the same responsiveness and neutral support you love but with improved comfort in those sensitive areas of your foot, like the arch and toes. Whether you're logging long marathon miles, squeezing in a speed session before the sun goes down or hopping into a spontaneous group jaunt, it's still the established road runner you can put your faith in, day after day, run after run.")
+                            .font(.caption)
+                            .fontWeight(.thin)
                     }
                 }
             }
-            .padding(.top,-200)
+            .padding(.top,-160)
             .padding()
             Spacer()
             HStack{
@@ -155,7 +168,7 @@ struct Product: View {
 
 
     }
-    
+        
     
 }
 
@@ -200,6 +213,74 @@ struct CircleStyle : View{
         .frame(height: 600)
         .background(Color.white)
         .cornerRadius(600)
+    }
+}
+
+struct ProductImageBar : View{
+    var body: some View{
+        HStack{
+            
+                Group{
+                    VStack {
+                        Image("shoe")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .frame(height: 80)
+                            .background(Color.white)
+                            .cornerRadius(15)
+                    }
+                    Spacer()
+                    VStack {
+                        Image("shoe")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .frame(height: 80)
+                            .background(Color.white)
+                            .cornerRadius(15)
+                            
+
+                        
+                    }
+                    Spacer()
+                    VStack {
+                        Image("shoe")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .frame(height: 80)
+                            .background(Color.white)
+                            .cornerRadius(15)
+                    }
+                    
+                    Spacer()
+                    VStack {
+                        Image("shoe")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .frame(height: 80)
+                            .background(Color.white)
+                            .cornerRadius(15)
+                    }
+                    
+                    
+                    
+                    
+                }
+               
+              
+                
+                
+                
+                
+                
+                
+            
+        }
+        .padding()
+        
     }
 }
 

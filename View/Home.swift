@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-        NavigationView {
+        NavigationStack{
+ 
 
         VStack{
             
@@ -64,28 +65,30 @@ struct Home: View {
                     .foregroundColor(Color("OrrangeTxt"))
                 
             }
+
             .padding(10)
             ScrollView(.horizontal,showsIndicators: false){
                 HStack(spacing: 15){
                     
                                     
                                  
-                                
-                               
-                    NavigationLink(destination: Product()) {
-                        SpecialDeal()
-                    }
-                    NavigationLink(destination: Product()) {
-                        SpecialDeal()
-                    }
-                    NavigationLink(destination: Product()) {
-                        SpecialDeal()
-                    }
-                    NavigationLink(destination: Product()) {
-                        SpecialDeal()
+                        
+                        NavigationLink(destination: Product()) {
+                            SpecialDeal()
+                            
+                        }
+                        NavigationLink(destination: Product()) {
+                            SpecialDeal()
+                        }
+                        NavigationLink(destination: Product()) {
+                            SpecialDeal()
+                        }
+                        NavigationLink(destination: Product()) {
+                            SpecialDeal()
+                        }
                     }
 
-                }
+                
             }
            
             Spacer()
@@ -95,8 +98,10 @@ struct Home: View {
         .padding()
         .background(Color("AppColor"))
 
+
     }
-        .navigationBarTitle("Main Page")
+
+        
 
     }
     
